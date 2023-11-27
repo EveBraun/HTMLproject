@@ -1,0 +1,81 @@
+@import "vendor/normalize.scss";
+
+/* Подключили малые компоненты (кнопка) */
+@import "components/btn.scss";
+@import "components/modal.scss";
+
+/* Подключили секции */
+@import "components/header.scss";
+@import "components/products.scss";
+@import "components/slider.scss";
+@import "components/about.scss";
+@import "components/partners.scss";
+@import "components/footer.scss";
+@import "components/filters.scss";
+
+
+
+
+/* Подключили шрифты */
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: black;
+
+}
+
+/* Отключаем паддинги и марджины по умолчанию */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.container {
+    max-width: 1160px;
+    margin:0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+// добавляем класс no-scroll для того, чтобы отключить скроллинг при открытии модального окна
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+

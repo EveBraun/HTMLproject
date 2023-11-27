@@ -1,0 +1,136 @@
+// Подложка для модального окна
+.modal {
+    // растягиваем на весь экран
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    position: fixed; //чтобы при скролле страницы окно не прокручивалось, оставалось на весь экран
+    top: 0;
+    left: 0;
+    z-index: 9999; //чтобы всегда поверх контента было
+    display: none;
+
+    &--open {
+        display: block;
+    }
+
+    &__window {
+        width: 600px;
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 50px;
+        // выставляем по центру
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+
+    }
+
+    &__close {
+        width: 21px;
+        height: 21px;
+
+        // background-size: cover; позволяет подстроить картинку под размер элемента
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 21 21' fill='none'%3E%3Cpath d='M13.3299 10.5005L20.7072 3.12321C21.0963 2.7317 21.0963 2.09952 20.7072 1.70801L19.292 0.291799C18.9005 -0.0972665 18.2683 -0.0972665 17.8768 0.291799L10.4995 7.67009L3.12221 0.2928C2.7307 -0.0962657 2.09852 -0.0962657 1.70701 0.2928L0.291799 1.70801C-0.0972665 2.09952 -0.0972665 2.7317 0.291799 3.12321L7.66909 10.5005L0.291799 17.8778C-0.0972665 18.2693 -0.0972665 18.9015 0.291799 19.293L1.70801 20.7082C2.09952 21.0973 2.7317 21.0973 3.12321 20.7082L10.5005 13.3309L17.8778 20.7082C18.2693 21.0973 18.9015 21.0973 19.293 20.7082L20.7082 19.293C21.0973 18.9015 21.0973 18.2693 20.7082 17.8778L13.3299 10.5005Z' fill='%23FB565A'/%3E%3C/svg%3E");
+        cursor: pointer;
+        opacity: 0.3;
+        transition: opacity 300ms;
+        
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 0.3;
+            
+        }
+
+        &:focus {
+            opacity: 1;
+            
+        }
+    }
+
+    &__title {
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        /* 100% */
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        span {
+            color: #000;
+
+            
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18px;
+            /* 112.5% */
+        }
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__input {
+        color: #444;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        /* 112.5% */
+        width: 100%;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 3px;
+        border: 2px solid #D7DCDE;
+
+        background: #FFF;
+        padding: 0 16px;
+        transition: border 300ms;
+
+        &:hover {
+            border: 2px solid #B4B9BB;
+        }
+
+        &:focus {
+            border: 2px solid #000;
+            
+        }
+
+        &--textarea {
+            height: 170px;
+            padding-top: 16px;
+            resize: none;
+        }
+
+    }
+
+    &__btn {
+        border:0;
+        padding-top: 0;
+        cursor: pointer;
+    }
+
+    
+}

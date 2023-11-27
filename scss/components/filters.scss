@@ -1,0 +1,303 @@
+.filters {
+
+    &__title {
+        margin-bottom: 13px;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 30px;
+        /* 166.667% */
+        text-transform: uppercase;
+    }
+
+    &__blocks {
+        display: flex;
+        flex-direction: column; //  Чтобы отобразилось в колонку
+        gap: 15px; // гэпы работают с дисплей флексом. 
+    }
+
+    &__grid {
+        margin-bottom: 43px;
+    }
+
+    &__slider {
+        margin-bottom: 54px;
+    }
+
+
+    &__label {
+        color: #283136;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        /* 118.75% */
+        display: flex; // без этого кружок не отображается
+        gap: 11px;
+        align-items: center;
+        user-select: none; //отключаем возм-ть выделять текст label
+
+        &--grid {
+
+            //задаем исходные радио (в состоянии покоя)
+            &::before {
+                content: '';
+                width: 25px;
+                height: 25px;
+                opacity: 0.4;
+                transition: opacity 300ms;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z' fill='%234D4D4D'/%3E%3C/svg%3E");
+            }
+        }
+
+        &--checkbox {
+
+            //задаем исходные чекбоксы (в состоянии покоя)
+            &::before {
+                //задаем через псевдоэлементы, чтобы применялось только к квадратику
+                content: '';
+                width: 23px;
+                height: 23px;
+                opacity: 0.4;
+                transition: opacity 300ms;
+                background-size: cover; //фоновое изображение подстраивается под размер блока (нужно, чтобы картинка не меняла заданный размер. Чекбокс чекнутый чуть шире чекбокса обычного)
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z' fill='%234D4D4D'/%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    &__radio {
+        opacity: 0; // cкрыли стандартное радио
+        position: absolute;
+        z-index: -1; // cкрыли стандартное радио (закинули под сайт)
+
+
+        &:checked+.filters__label--grid::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 12.5C0 5.597 5.597 0 12.5 0C19.403 0 25 5.597 25 12.5C25 19.403 19.403 25 12.5 25C5.597 25 0 19.403 0 12.5ZM21 12.5C21 7.813 17.187 4 12.5 4C7.813 4 4 7.813 4 12.5C4 17.187 7.813 21 12.5 21C17.187 21 21 17.187 21 12.5Z' fill='%234D4D4D'/%3E%3Cpath d='M12.5 17C14.9853 17 17 14.9853 17 12.5C17 10.0147 14.9853 8 12.5 8C10.0147 8 8 10.0147 8 12.5C8 14.9853 10.0147 17 12.5 17Z' fill='%234D4D4D'/%3E%3C/svg%3E");
+        }
+
+        &:not(:disabled):hover+.filters__label--grid::before {
+            //у незаблокированного элемента отследить состояние наведения
+            opacity: 1;
+        }
+
+        &:disabled+.filters__label--grid {
+            opacity: 0.3;
+
+            &::before {
+                opacity: 0.1;
+            }
+        }
+
+    }
+
+    &__block {
+        width: fit-content; //принимает ширину контента
+    }
+
+
+    //для чекбокса:
+
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+
+        &:checked+.filters__label--checkbox::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='23' viewBox='0 0 25 23' fill='none'%3E%3Cpath d='M6.95925 8.48591L4.25684 11.3149L11.6916 19.0979L25.0002 5.16591L22.2988 2.33691L11.6916 13.4389L6.95925 8.48591Z' fill='%234D4D4D'/%3E%3Cpath d='M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z' fill='%234D4D4D'/%3E%3C/svg%3E");
+        }
+
+        &:not(:disabled):hover+.filters__label--checkbox::before {
+            //у незаблокированного элемента отследить состояние наведения
+            opacity: 1;
+        }
+
+        &:disabled+.filters__label--checkbox {
+            opacity: 0.3;
+
+            &::before {
+                opacity: 0.1;
+            }
+        }
+
+    }
+
+
+    &__btn {
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        /* 112.5% */
+        background-color: #EEEEEE;
+        width: 260px;
+        border: 0;
+        padding: 0; //отключаем, чтобы центрировать текст по высоте кнопки
+        margin-top: 48px;
+
+        &:hover {
+            background-color: #DFDFDF;
+        }
+
+        &:active {
+            color: rgba(0, 0, 0, 0.3);
+            background-color: #D5D5D5;
+            box-shadow: 0px 3px 0px 0px rgba(0, 1, 1, 0.10) inset;
+        }
+    }
+
+
+    // СЛАЙДЕР
+    &__slider-wrapper {
+        position: relative;
+        width: 260px;
+        height: 80px;
+        border-radius: 3px;
+        background-color: #EEE;
+        padding: 30px 18px;
+        margin-top: 48px;
+        margin-bottom: 14px;
+    }
+
+    &__slider-container {
+        position: relative;
+        width: 100%;
+        height: 20px;
+
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        outline: none;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        background-color: transparent;
+        pointer-events: none;
+    }
+
+    &__slider-track {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        height: 2px;
+    }
+
+    input[type="range"]::-moz-range-track {
+        -moz-appearance: none;
+        height: 2px;
+    }
+
+    input[type="range"]::-ms-track {
+        appearance: none;
+        height: 2px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        cursor: pointer;
+        margin-top: -9px;
+        pointer-events: auto;
+        border-radius: 50%;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #fff;
+        pointer-events: auto;
+        border: 0;
+    }
+
+    input[type="range"]::-ms-thumb {
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #fff;
+        pointer-events: auto;
+    }
+
+    input[type="range"]:active::-webkit-slider-thumb {
+        border: 2px solid #00CA74;
+    }
+
+    input[type="range"]:active::-moz-range-thumb {
+        border: 2px solid #00CA74;
+    }
+
+
+// отключаем стрелочки в инпутах number
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    input[type="number"]:hover,
+    input[type="number"]:focus {
+        -moz-appearance: number-input;
+    }
+
+    &__slider-label {
+        gap: 11px;
+        display: flex;
+        align-items: center;
+
+        span {
+            color: #283136;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
+            /* 137.5% */
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 80px;
+            height: 38px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            background: #EEE;
+            color: #283136;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
+            /* 137.5% */
+            text-transform: uppercase;
+            outline: 1px solid #EEE;
+            border: 0;
+            text-align: center;
+        }
+
+    }
+
+    &__slider-inputs {
+        display: flex;
+        gap: 33px;
+    }
+}

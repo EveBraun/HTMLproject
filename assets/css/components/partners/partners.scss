@@ -1,0 +1,26 @@
+.partners {
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 45px 0;
+        border-bottom: 2px solid #EEE;
+    }
+    &__line {
+        width: 2px;
+        height: 52px;
+        background: #EEE;  
+    }
+
+    &__link {
+        opacity: 0.2;
+        transition: opacity 300ms;
+        &:hover {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 0.1;
+        }
+    }
+}

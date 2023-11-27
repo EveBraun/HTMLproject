@@ -1,0 +1,112 @@
+.about {
+
+
+    &__wrapper {
+        border-bottom: 2px solid #EEE;
+        border-top: 2px solid #EEE;
+        padding-bottom: 73px;
+    }
+
+    &__upper {
+        background-image: url("../img/nerds-illustration.png");
+        background-repeat: no-repeat;
+        background-position: right;
+        padding-top: 73px;
+    }
+
+    &__lower {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__title {
+        text-align: left;
+        color: #000;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 45px; /* 100% */
+        margin-top: 0;
+        margin-bottom: 32px;
+    }
+
+    &__descr {
+        color: #283136;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        margin-bottom: 40px;
+    }
+
+    &__subtitle {
+        color: #283136;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+        text-transform: uppercase;
+    }
+
+    &__item {
+        color: #283136;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 112.5% */
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            display: inline-block;
+            background: #FB565A;
+        }
+    }
+
+    &__numbers {
+        color: #000;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px; /* 142.222% */
+        margin-bottom: 10px;
+        
+    }
+
+    &__text {
+        color: #283136;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 112.5% */
+    }
+
+    &__list {
+        margin-top: 23px;
+    }
+
+    &__advantages {
+        margin-top: 31px;
+        display: flex;
+            
+    }
+
+    &__advantage {
+        margin-right: 20px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+
+}

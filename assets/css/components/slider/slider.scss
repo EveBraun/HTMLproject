@@ -1,0 +1,33 @@
+.slider {
+    background-color: #EEE;
+
+    &__wrapper {
+        padding-top: 78px;
+        padding-bottom: 84px;
+        background-image: url('../img/slider_bg.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    &__title {
+        color: #000;
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 55px; /* 100% */
+        margin-bottom: 25px;
+    }
+
+    &__descr {
+        color: #283136;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        margin-bottom: 38px;
+    }
+
+    &__btn {
+        width: 240px;
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой сайтик</title>
+    <meta name="description" content="Дизайн студии из Краснодара" />
+    <!-- <link rel="stylesheet" href="assets/css/normalize.css" /> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal">
+      <div class="modal__window">
+        <div class="modal__header">
+          <h5 class="modal__title">Напишите нам</h5>
+          <!-- Крестик (вставим фоном) -->
+          <div class="modal__close" tabindex="1"></div> <!-- tabindex, чтобы при нажатии Tab он попадал в фокус, так же как и инпуты -->
+        </div>
+        <div class="modal__main">
+          <!-- форма -->
+          <form method="post">
+            <!-- Инпут для имени -->
+            <label for="" class="modal__label">
+              <span>Ваше имя: </span>
+              <input type="text" class="modal__input" name="name" placeholder="Имя Фамилия" minlength="2" required>
+            </label>
+
+            <!-- Инпут для телефона -->
+            <label for="" class="modal__label">
+              <span>Ваш телефон: </span>
+              <input type="tel" class="modal__input" name="phone" placeholder="+79999999999" minlength="11" maxlength="12" required>
+            </label>
+            
+            <!-- Окно для ввода текста -->
+            <label for="" class="modal__label">
+              <span>Введите текст сообщения: </span>
+              <textarea name="message" class="modal__input modal__input--textarea" placeholder="Ваш текст"></textarea>
+            </label>
+
+            <!-- Кнопка "Отправить" -->
+            <button type="submit" class="btn modal__btn">Отправить</button>
+            
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="#" class="header__logo">
+            <img src="assets/img/nerds-logo.svg" alt="" />
+          </a>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="#" class="header__link header__link--current"
+                  >Студия</a
+                >
+              </li>
+              <li class="header__item">
+                <a href="#" class="header__link">Клиенты</a>
+              </li>
+              <li class="header__item">
+                <a href="catalogue.html" class="header__link">Магазин</a>
+              </li>
+              <li class="header__item">
+                <a href="#" class="header__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#" class="header__link header__cart">Корзина</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="slider">
+        <div class="container">
+          <div class="slider__wrapper">
+            <h2 class="slider__title">Долго, дорого, <br />скрупулезно.</h2>
+            <p class="slider__descr">
+              Математически выверенный дизайн <br />
+              для вашего сайта или мобильного приложения.
+            </p>
+            <a href="#" class="slider__btn btn">УЗНАТЬ БОЛЬШЕ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="container">
+          <div class="products__wrapper">
+            <ul class="products__list">
+              <li class="products__item">
+                <img src="assets/img/prod1.png" alt="" class="products__pic" />
+                <h3 class="products__title">Веб-сайты</h3>
+                <p class="products__descr">
+                  Мир никогда не будет прежним <br />
+                  после того как увидит ваш сайт!
+                </p>
+                <a href="#" class="products__btn products__btn--red btn"
+                  >Заказать</a
+                >
+              </li>
+              <li class="products__item">
+                <img src="assets/img/prod2.png" alt="" class="products__pic" />
+                <h3 class="products__title">Приложения</h3>
+                <p class="products__descr">
+                  Покорите топ-10 приложений <br />в AppStore и Google Play
+                </p>
+                <a href="#" class="products__btn products__btn--green btn"
+                  >Заказать</a
+                >
+              </li>
+              <li class="products__item">
+                <img src="assets/img/prod3.png" alt="" class="products__pic" />
+                <h3 class="products__title">Презентации</h3>
+                <p class="products__descr">
+                  Вы даже не подозреваете, <br />насколько вы изумительны!
+                </p>
+                <a href="#" class="products__btn products__btn--yellow btn"
+                  >Заказать</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <div class="about__wrapper">
+            <div class="about__upper">
+              <h1 class="about__title">
+                Мы — маленькая, но гордая <br />дизайн-студия из Краснодара.
+              </h1>
+              <p class="about__descr">
+                Исповедуем принципы минимализма и чистоты. Ставим математический
+                расчет <br />превыше креатива. Работаем не покладая рук, как
+                роботы.
+              </p>
+            </div>
+            <div class="about__lower">
+              <div class="about__left">
+                <h4 class="about__subtitle">Выполняем заказы на разработку:</h4>
+                <ul class="about__list">
+                  <li class="about__item">Веб-сайтов любой сложности</li>
+                  <li class="about__item">
+                    Мобильных приложений для iOS и Android
+                  </li>
+                  <li class="about__item">
+                    Слайдшоу и видео для корпоративных презентаций
+                  </li>
+                </ul>
+              </div>
+              <div class="about__right">
+                <h4 class="about__subtitle">
+                  с 2004 года Любим точность во всем:
+                </h4>
+                <ul class="about__advantages">
+                  <li class="about__advantage">
+                    <p class="about__numbers">146<sup>%</sup></p>
+                    <p class="about__text">Уровень <br />самоотдачи</p>
+                  </li>
+                  <li class="about__advantage">
+                    <p class="about__numbers">100<sup>%</sup></p>
+                    <p class="about__text">Соблюдение <br />сроков</p>
+                  </li>
+                  <li class="about__advantage">
+                    <p class="about__numbers">50<sup>%</sup></p>
+                    <p class="about__text">Минимальная <br />предоплата</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="container">
+          <div class="partners__wrapper">
+            <a href="" class="partners__link"
+              ><img src="assets/img/partners/html_academy.svg" alt=""
+            /></a>
+            <div class="partners__line"></div>
+            <a href="" class="partners__link"
+              ><img src="assets/img/partners/borodinski.png" alt=""
+            /></a>
+            <div class="partners__line"></div>
+            <a href="" class="partners__link"
+              ><img src="assets/img/partners/pink.png" alt=""
+            /></a>
+            <div class="partners__line"></div>
+            <a href="" class="partners__link"
+              ><img src="assets/img/partners/mishka.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=25.011686%2C49.811213&mode=search&oid=1799493206&ol=biz&sll=30.315635%2C59.938951&sspn=0.986023%2C0.292513&text=cfrht%20rth&z=5"
+          width="560"
+          height="400"
+          frameborder="0"
+          allowfullscreen="true"
+          style="position: relative"
+        ></iframe>
+        <div class="container">
+          <div class="footer__map-wrapper">
+            <div class="footer__block">
+              <h4 class="footer__subtitle">NЁRDS DESIGN STUDIO</h4>
+              <address class="footer__address">191186, Санкт-Петербург, <br>ул. Б. Конюшенная, д. 19/8 <br><br> <a href="tel:+78122757575">тел. +7 (812) 275-75-75</a></address>
+              <a class="footer__button btn" href="#">Напишите нам</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.77845111345!2d2.264463140742702!3d48.85893831222974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2z0J_QsNGA0LjQtiwg0KTRgNCw0L3RhtC40Y8!5e0!3m2!1sru!2sru!4v1697282073124!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+      </div>
+      
+      <div class="container">
+        <div class="footer__lower">
+          <ul class="footer__list">
+            <li class="footer__item"><a class="footer__link" href=""> <img src="assets/img/icons/vk-icon.svg" alt=""> </a></li>
+            <li class="footer__item"><a class="footer__link" href=""> <img src="assets/img/icons/fb-icon.svg" alt=""> </a></li>
+            <li class="footer__item"><a class="footer__link" href=""> <img src="assets/img/icons/insta-icon.svg" alt=""> </a></li>
+          </ul>
+          <div class="footer__lower-text">
+            <h2 class="footer__h2text">Давайте дружить, это выгодно!</h2>
+            <p class="footer__ptext">Скидка 10% для друзей из социальных сетей.</p>
+          </div>
+        </div>
+      </div>
+      
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

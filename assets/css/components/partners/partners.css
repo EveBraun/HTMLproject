@@ -1,0 +1,22 @@
+.partners__wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 45px 0;
+  border-bottom: 2px solid #EEE;
+}
+.partners__line {
+  width: 2px;
+  height: 52px;
+  background: #EEE;
+}
+.partners__link {
+  opacity: 0.2;
+  transition: opacity 300ms;
+}
+.partners__link:hover {
+  opacity: 1;
+}
+.partners__link:active {
+  opacity: 0.1;
+}/*# sourceMappingURL=partners.css.map */
